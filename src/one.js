@@ -21,12 +21,5 @@ const character = {
   ],
 };
 
-const { special: [one, two] } = character;
-
-export default function Missing(data) {
-  if (!Object.keys(data).includes('description')) {
-    data.description = 'Описание недоступно';
-    return data;
-  }
-  return data;
-}
+console.log(character.type);
+console.log(character.level);
