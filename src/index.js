@@ -21,12 +21,16 @@ const character = {
   ],
 };
 
-const { special: [one, two] } = character;
-
-export default function Missing(data) {
-  if (!Object.keys(data).includes('description')) {
-    data.description = 'Описание недоступно';
-    return data;
+function find(obj) {
+  if (!obj.hasOwnProperty('description')) {
+    Object.defineProperty(obj, 'description', {
+      value: 'Описание недоступно',
+      enumerable: true,
+    })
   }
-  return data;
+  return obj
+}
+
+for (item in character.special) {
+  console.log(find(character.special[item]));
 }

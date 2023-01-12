@@ -20,6 +20,3 @@ const character = {
     },
   ],
 };
-
-console.log(character.type);
-console.log(character.level);
